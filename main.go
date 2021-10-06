@@ -7,12 +7,11 @@ package main
 import (
 	"flag"
 	"fmt"
+	"github.com/slicelife/go-bindata/bindata"
 	"os"
 	"path/filepath"
 	"regexp"
 	"strings"
-
-	"github.com/go-bindata/go-bindata/v3"
 )
 
 func main() {
@@ -55,7 +54,7 @@ func parseArgs() *bindata.Config {
 	flag.BoolVar(&version, "version", false, "Displays version information.")
 
 	ignore := make([]string, 0)
-	flag.Var((*AppendSliceValue)(&ignore), "ignore", "Regex pattern to ignore")
+	flag.Var((*bindata.AppendSliceValue)(&ignore), "ignore", "Regex pattern to ignore")
 
 	flag.Parse()
 
@@ -66,7 +65,7 @@ func parseArgs() *bindata.Config {
 	c.Ignore = patterns
 
 	if version {
-		fmt.Printf("%s\n", Version())
+		fmt.Printf("%s\n", bindata.Version())
 		os.Exit(0)
 	}
 

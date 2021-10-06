@@ -1,6 +1,4 @@
 ## bindata
-[![Build Status](https://cloud.drone.io/api/badges/go-bindata/go-bindata/status.svg)](https://cloud.drone.io/go-bindata/go-bindata)
-[![Go Report Card](https://goreportcard.com/badge/github.com/go-bindata/bindata)](https://goreportcard.com/report/github.com/go-bindata/bindata)
 
 This package converts any file into manageable Go source code. Useful for
 embedding binary data into a go program. The file data is optionally gzip
@@ -15,7 +13,7 @@ output being generated.
 
 To install the library and command line program, use the following:
 
-	go get -u github.com/go-bindata/go-bindata/...
+	go install github.com/slicelife/go-bindata@latest
 
 
 ### Usage
